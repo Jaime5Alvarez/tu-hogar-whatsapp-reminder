@@ -34,7 +34,9 @@ def lambda_handler(event, context):
             if not is_reminder_day(row[0]):
                 continue
             phone_number = get_phone_number(row)
-            SendWhatsappService(phone_number).send_message("Hello, this is a test message")
+            SendWhatsappService(phone_number).send_message(
+                "Hello, this is a test message"
+            )
 
         print("Finished lambda function successfully")
     except Exception as err:

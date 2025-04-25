@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 import os
 
+
 def is_reminder_day(date_str: str):
     target_date = datetime.now() + timedelta(days=1)
     return date_str == target_date.strftime("%d/%m/%Y")
