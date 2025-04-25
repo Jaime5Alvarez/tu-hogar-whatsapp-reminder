@@ -11,6 +11,12 @@ uv sync
 uv run lambda_function.py
 ```
 
+##CREATE LAMBDA PACKAGE
+
+```bash
+./create_lambda_package.sh
+```
+
 ##RUN TESTS
 
 ```bash
