@@ -4,3 +4,4 @@ virtus-automate-4d905345bfa9.json
 .pytest_cache/
 __pycache__/
 .env
+package/
