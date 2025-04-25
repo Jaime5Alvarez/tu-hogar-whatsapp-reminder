@@ -5,10 +5,10 @@
 uv sync
 ```
 
-##RUN MAIN
+##RUN LAMBDA FUNCTION
 
 ```bash
-uv run main.py
+uv run lambda_function.py
 ```
 
 ##RUN TESTS

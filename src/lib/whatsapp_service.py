@@ -1,4 +1,4 @@
-class SendWhatsappService:
+class WhatsappService:
     def __init__(self, phone_number: str):
         self.phone_number = phone_number
 

@@ -13,8 +13,3 @@ def get_phone_number(row: list[str]) -> str:
 
 def is_debug_mode():
     return os.getenv("DEBUG_MODE") == "true"
-
-
-def send_email(message: str):
-    if not is_debug_mode():
-        print(message)
