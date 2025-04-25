@@ -1,0 +1,6 @@
+virtus-automate-4d905345bfa9.json
+.venv/
+.ruff_cache/
+.pytest_cache/
+__pycache__/
+.env
