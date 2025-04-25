@@ -11,7 +11,8 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 CREDENTIALS_FILE = os.path.join(os.path.dirname(__file__), AUTH_FILE)
 
 
-def main():
+def lambda_handler(event, context):
+    print("Starting lambda function")
     if not os.path.exists(CREDENTIALS_FILE):
         print(f"Error: The file {CREDENTIALS_FILE} does not exist.")
         return send_email(f"Error: The file {CREDENTIALS_FILE} does not exist.")
@@ -34,11 +35,12 @@ def main():
                 continue
             phone_number = get_phone_number(row)
             SendWhatsappService(phone_number).send_message("Hello, this is a test message")
-            
+
+        print("Finished lambda function successfully")
     except Exception as err:
         print(f"Error trying to get data from the sheet: {err}")
         return send_email(f"Error trying to get data from the sheet: {err}")
 
 
 if __name__ == "__main__":
-    main()
+    lambda_handler({}, {})
