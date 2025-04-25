@@ -9,7 +9,7 @@ def is_reminder_day(date_str: str):
 
 
 def get_phone_number(row: list[str]) -> str:
-    return row[1].replace(" ", "")
+    return row[3].replace(" ", "")
 
 
 def is_debug_mode():
