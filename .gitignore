@@ -5,3 +5,4 @@ virtus-automate-4d905345bfa9.json
 __pycache__/
 .env
 package/
+lambda_deployment.zip
