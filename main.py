@@ -29,9 +29,10 @@ def main():
         rows = result.get("values", [])[1:]
 
         for row in rows:
-            if is_reminder_day(row[0]):
-                phone_number = get_phone_number(row)
-                print(phone_number)
+            if not is_reminder_day(row[0]):
+                continue
+            phone_number = get_phone_number(row)
+            print(phone_number)
 
     except Exception as err:
         print(f"Error trying to get data from the sheet: {err}")
