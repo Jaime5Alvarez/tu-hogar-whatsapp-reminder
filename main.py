@@ -11,10 +11,9 @@ CREDENTIALS_FILE = os.path.join(os.path.dirname(__file__), AUTH_FILE)
 
 
 def main():
-    """Accede a los datos de la hoja de reservas y los muestra."""
     if not os.path.exists(CREDENTIALS_FILE):
-        print(f"Error: El archivo {CREDENTIALS_FILE} no existe.")
-        return send_email("Error: El archivo {CREDENTIALS_FILE} no existe.")
+        print(f"Error: The file {CREDENTIALS_FILE} does not exist.")
+        return send_email(f"Error: The file {CREDENTIALS_FILE} does not exist.")
 
     creds = Credentials.from_service_account_file(CREDENTIALS_FILE, scopes=SCOPES)
 
@@ -33,10 +32,10 @@ def main():
             if is_reminder_day(row[0]):
                 phone_number = get_phone_number(row)
                 print(phone_number)
-                
+
     except Exception as err:
-        print(f"Error al acceder a la hoja: {err}")
-        return send_email(f"Error al acceder a la hoja: {err}")
+        print(f"Error trying to get data from the sheet: {err}")
+        return send_email(f"Error trying to get data from the sheet: {err}")
 
 
 if __name__ == "__main__":
