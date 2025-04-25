@@ -2,6 +2,7 @@ from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 import os
 from src.config.constants import AUTH_FILE, RANGE_NAME, SPREADSHEET_ID
+from src.lib.send_whatsapp_service import SendWhatsappService
 from src.utils.utils import get_phone_number, is_reminder_day, send_email
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
@@ -32,8 +33,8 @@ def main():
             if not is_reminder_day(row[0]):
                 continue
             phone_number = get_phone_number(row)
-            print(phone_number)
-
+            SendWhatsappService(phone_number).send_message("Hello, this is a test message")
+            
     except Exception as err:
         print(f"Error trying to get data from the sheet: {err}")
         return send_email(f"Error trying to get data from the sheet: {err}")
