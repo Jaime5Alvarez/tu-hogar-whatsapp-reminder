@@ -4,6 +4,11 @@
 ```bash
 uv sync
 ```
+## Create .env file and add your credentials
+
+```bash
+cp .env.example .env
+```
 
 ##RUN LAMBDA FUNCTION
 
