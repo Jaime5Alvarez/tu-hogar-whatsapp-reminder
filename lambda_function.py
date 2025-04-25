@@ -40,7 +40,6 @@ def lambda_handler(event, context):
             WhatsappService(phone_number).send_message("Hello, this is a test message")
 
         print("Finished lambda function successfully")
-        return EmailService().send_email("Finished lambda function successfully")
     except Exception as err:
         print(f"Error trying to get data from the sheet: {err}")
         return EmailService().send_email(
