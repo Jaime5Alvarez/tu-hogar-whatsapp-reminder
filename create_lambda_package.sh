@@ -28,4 +28,4 @@ cd package
 zip -r ../lambda_deployment.zip .
 cd ..
 
-echo "Paquete lambda_deployment.zip creado con éxito" 
+echo "Package lambda_deployment.zip created successfully" 
