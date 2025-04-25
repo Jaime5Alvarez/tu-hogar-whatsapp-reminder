@@ -1,23 +1,23 @@
 #!/bin/bash
 
-# Crear directorio temporal para el paquete
+# Create temporary directory for the package
 mkdir -p package
 
-# Instalar dependencias en el directorio del paquete
+# Install dependencies in the package directory
 pip install -r requirements.txt --target ./package
 
-# Copiar el código fuente al directorio del paquete
+# Copy the source code to the package directory
 cp -r src package/
 cp lambda_function.py package/
 
-# Crear el archivo .env con las variables de entorno necesarias
+# Create the .env file with the necessary environment variables
 cp .env package/
 
-# Asegurarse de que el archivo de credenciales esté en el lugar correcto
+# Ensure the credentials file is in the correct place
 mkdir -p package/src/config
 cp src/config/virtus-automate-4d905345bfa9.json package/src/config/
 
-# Crear el archivo zip
+# Create the zip file
 cd package
 zip -r ../lambda_deployment.zip .
 cd ..
