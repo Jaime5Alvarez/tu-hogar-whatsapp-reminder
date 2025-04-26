@@ -4,7 +4,7 @@
 mkdir -p package
 
 # Install dependencies in the package directory
-pip install -r requirements.txt --target ./package
+uv pip install -r requirements.txt --target ./package
 
 # Copy the source code to the package directory
 cp -r src package/
@@ -21,5 +21,8 @@ cp src/config/virtus-automate-4d905345bfa9.json package/src/config/
 cd package
 zip -r ../lambda_deployment.zip .
 cd ..
+
+# Clean up
+rm -rf package
 
 echo "Package lambda_deployment.zip created successfully" 
