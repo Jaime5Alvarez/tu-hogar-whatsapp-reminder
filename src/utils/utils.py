@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from src.config.constants import DEBUG_MODE
+import os
 
 
 def is_reminder_day(date_str: str):
@@ -12,4 +12,4 @@ def get_phone_number(row: list[str]) -> str:
 
 
 def is_debug_mode():
-    return DEBUG_MODE == "true"
+    return os.environ.get("DEBUG_MODE", "").lower() == "true"
